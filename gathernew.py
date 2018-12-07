@@ -92,7 +92,7 @@ class sysParam:
 		print(power_predicted)
 		if len(self.power_values) > 10:
 			median_power = sorted(self.power_values[:-12:-1])[-6]
-			# print("median power", median_power)
+			print("median power", median_power)
 			if median_power   > threshold_power:
 				output = subprocess.call(shlex.split('./redis_script.sh redis2'))
 				print(output)
