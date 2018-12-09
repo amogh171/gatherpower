@@ -88,7 +88,14 @@ class sysParam:
 		
 		#print(r.status_code)
 		power_predicted = r.json()['power'][0][0]
-		threshold_power = 115.7
+
+		# top 10 - 149.3
+		# top 15 - 143.7
+		# top 20 - 126.6
+		# top 30 - 115.4
+		# top 40 - 103.6
+
+		threshold_power = 115.7 # Change threshold values from above reference
 		print(power_predicted)
 		if len(self.power_values) > 10:
 			median_power = sorted(self.power_values[:-12:-1])[-6]
